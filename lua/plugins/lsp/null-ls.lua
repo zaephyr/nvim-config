@@ -5,6 +5,7 @@ end
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
+local codeAction = null_ls.builtins.code_actions
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
 
@@ -18,6 +19,7 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		formatting.prettier.with({ extra_args = { "--print-width 80", "--single-quote", "--jsx-single-quote" } }),
+		codeAction.gitsigns,
 		-- formatting.black.with { extra_args = { "--fast" } },
 		-- formatting.yapf,
 		formatting.stylua,

@@ -91,10 +91,7 @@ local mappings = {
 	["q"] = { "<cmd>q!<CR>", "Quit" },
 	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-	["f"] = {
-		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes')get_dropdown{previewer = false})<cr>",
-		"Find files",
-	},
+	["f"] = { "<cmd>Telescope find_files<cr>", "Find files" },
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 
@@ -171,6 +168,7 @@ local mappings = {
 		R = { "<cmd>Telescope registers<cr>", "Registers" },
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
+		f = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current buffer fzf" },
 	},
 
 	t = {
@@ -178,6 +176,7 @@ local mappings = {
 		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
 		u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
 		t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
+		g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
 		p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
@@ -199,4 +198,4 @@ local mappings = {
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
--- which_key.register(vmappings, vopts)
+--hich_key.register(vmappings, vopts)

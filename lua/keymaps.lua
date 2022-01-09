@@ -26,13 +26,13 @@ vim.g.mapleader = " "
 map("i", "jj", "<Esc>", { noremap = true })
 
 -- clear search highlighting
-map("n", "<leader>c", ":nohl<CR>", opts)
+--map("n", "<leader>c", ":nohl<CR>", opts)
 
 -- fast format + saving with <leader> and s
-map("n", "<leader>s", ":w<CR>", opts)
+--map("n", "<leader>w", ":w<CR>", opts)
 
 -- close all windows and exit from neovim
-map("n", "<leader>q", ":qa!<CR>", opts)
+--map("n", "<leader>q", ":q<CR>", opts)
 
 -- Better window navigation
 map("n", "<C-h>", "<C-w>h", opts)
@@ -58,24 +58,22 @@ map("x", "K", ":move '<-2<CR>gv-gv", opts)
 -- Applications & Plugins shortcuts:
 -----------------------------------------------------------
 -- open terminal
-map("n", "<C-t>", ":Term<CR>", { noremap = true })
+-- map("n", "<C-t>", ":Term<CR>", { noremap = true })
 -- Better terminal navigation
 -- map("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- map("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 -- map("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- map("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
--- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-map(
-	"n",
-	"<leader>f",
-	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-	opts
-)
-map("n", "<C-t>", "<cmd>Telescope live_grep<cr>", opts)
+-- Telescope
+-- map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
+-- map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
 
 -- Nvimtree
-map("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+-- map("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Null-ls
 -- map("n", "<leader>p", ":Format<cr>", opts)
+
+--Autopairs
+map("i", "<M-d>", "<cmd>call v:lua.MPairs.autopairs_c_h(0)<cr>", opts)
