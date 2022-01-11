@@ -22,3 +22,5 @@ require("plugins.alpha")
 require("plugins.whichkey")
 require("plugins.autocommands")
 require("plugins.indentline")
+
+require("neoscroll").setup()
